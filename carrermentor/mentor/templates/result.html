@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Career Report</title>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="report-container">
+        <h1 class="main-heading">AI Career Analysis Report</h1>
+        <div class="student-card">
+            <h2>{{ student.full_name }}</h2>
+            <p><strong>Education:</strong>{{ student.education }}</p>
+            <p><strong>Location:</strong>{{ student.location }}</p>
+        </div>
+        <div class="report-card">
+            <h2>Career Recommendation</h2>
+            <pre class="report-text">{{ report }}</pre>
+        </div>
+        <div class="button-container">
+            <a href="/" class="home-btn">Back To Home</a>
+        </div>
+    </div>
+</body>
+</html>

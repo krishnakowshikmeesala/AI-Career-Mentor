@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Discovery Assessment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/assessment.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1 class="main-heading">Career Discovery Assessment</h1>
+    <p class="subtitle">Answer a few questions and discover your ideal career path.</p>
+    <form method="POST">
+        {% csrf_token %}
+        <h2 class="mt-3 mb-3">Basic Information</h2>
+        <p class="info-paragraph" >Enter your name:</p>
+        <input class="info-box pt-1 pb-2 mt-0 mb-2" type="text" name="full_name" placeholder="Full Name" required>
+        <p class="info-paragraph" >Enter your age:</p>
+        <input class="info-box pt-1 pb-2 mt-0 mb-2" type="number" name="age" placeholder="Age" required>
+        <p class="info-paragraph" >Enter your current education:</p>
+        <input class="info-box pt-1 pb-2 mt-0 mb-2" type="text" name="education" placeholder="Current Education" required>
+        <p class="info-paragraph" >Enter your location</p>
+        <input class="info-box pt-1 pb-2 mt-0 mb-2" type="text" name="location" placeholder="Location" required>
+        <h2 class="mt-3 mb-3">Interests</h2>
+        <div class="checkbox-group">
+            <label class="intrest-label">
+                <input type="checkbox" name="interests" value="Programming"> Programming
+            </label>
+            <label class="intrest-label">
+                <input type="checkbox" name="interests" value="AI & ML"> AI & ML
+            </label>
+            <label class="intrest-label">
+                <input type="checkbox" name="interests" value="Designing"> Designing
+            </label>
+            <label class="intrest-label">
+                <input type="checkbox" name="interests" value="Business"> Business
+            </label>
+            <label class="intrest-label">
+                <input type="checkbox" name="interests" value="Cybersecurity"> Cybersecurity
+            </label>
+        </div>
+        <h2 class="mt-3 mb-3">Strengths</h2>
+        <div class="checkbox-group">
+            <label class="strength-label">
+                <input type="checkbox" name="strengths" value="Problem Solving"> Problem Solving
+            </label>
+            <label class="strength-label">
+                <input type="checkbox" name="strengths" value="Leadership"> Leadership
+            </label>
+            <label class="strength-label">
+                <input type="checkbox" name="strengths" value="Communication"> Communication
+            </label>
+            <label class="strength-label">
+                <input type="checkbox" name="strengths" value="Creativity"> Creativity
+            </label>
+        </div>
+        <h2 class="mt-3 mb-3">Career Goal</h2>
+        <select name="career_goal" class="options mb-3">
+            <option>High Salary</option>
+            <option>Government Job</option>
+            <option>Remote Work</option>
+            <option>Startup Founder</option>
+            <option>Research</option>
+        </select>
+        <h2 class="mt-3 mb-3">Learning Preference</h2>
+        <select name="learning_preference" class="options mb-3">
+            <option>Videos</option>
+            <option>Projects</option>
+            <option>Reading</option>
+            <option>Live Classes</option>
+        </select>
+        <h2 class="mt-3 mb-3">Biggest Challenge</h2>
+        <select name="challenge" class="options mb-3">
+            <option>No Mentor Guidance</option>
+            <option>Financial Issues</option>
+            <option>English Communication</option>
+            <option>Lack of Confidence</option>
+            <option>Don't Know Where to Start</option>
+        </select>
+        <h2 class="mt-3 mb-3">Dream Career</h2>
+        <select name="dream_career" class="options mb-3">
+            <option>Software Engineer</option>
+            <option>AI Engineer</option>
+            <option>Data Scientist</option>
+            <option>Teacher</option>
+            <option>Doctor</option>
+            <option>Entrepreneur</option>
+            <option>Undecided</option>
+        </select>
+        <button type="submit" class="mt-3 mb-3">
+            Generate My Career Roadmap
+        </button>
+    </form>
+</div>
+</body>
+</html>
