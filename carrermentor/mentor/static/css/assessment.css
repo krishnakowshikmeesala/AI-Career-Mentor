@@ -14,12 +14,12 @@ body{
 .main-heading{
     text-align:center;
     color:#4b0082;
-    font-family:monospace;
+    font-family:sans-serif;
 }
 h2{
     color:#4b0082;
     font-size:27px;
-    font-family:monospace;
+    font-family:sans-serif;
 }
 .subtitle{
     text-align:center;
