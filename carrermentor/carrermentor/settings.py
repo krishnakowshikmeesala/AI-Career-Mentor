@@ -121,3 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+import os
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
