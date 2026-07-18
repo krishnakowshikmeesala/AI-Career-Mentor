@@ -125,3 +125,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 import os
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
+api_key = os.environ.get("GEMINI_API_KEY")
